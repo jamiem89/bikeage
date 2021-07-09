@@ -1,0 +1,28 @@
+{
+  "name": "bikeage",
+  "version": "1.0.0",
+  "description": "Online presence for local bike company",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamiem89/bikeage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamiem89/bikeage/issues"
+  },
+  "homepage": "https://github.com/jamiem89/bikeage#readme",
+  "devDependencies": {
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.0.0",
+    "node-sass": "^6.0.1"
+  }
+}
