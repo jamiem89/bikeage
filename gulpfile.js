@@ -5,12 +5,16 @@ var sass = require('gulp-sass')(require('node-sass'));
 var concat = require('gulp-concat');
 sass.compiler = require('node-sass');
 
-var themeDir = 'build/wp-content/themes/bikeage/';
+var themeDir = 'wp-content/themes/indigo';
 
-gulp.task('sass', function (done) {
-    gulp.src(`${themeDir}/sass/**/*.scss`)
-   .pipe(concat('custom.scss'))
+gulp.task('compile-sass', function (done) {
+    gulp.src(`${themeDir}/scss/**/*.scss`)
    .pipe(sass().on('error', sass.logError))
    .pipe(gulp.dest(`${themeDir}/css/`))
    done();
+});
+
+gulp.task('watch', function(done){
+    gulp.watch(`${themeDir}/scss/**/*.scss`, gulp.series('compile-sass'));
+    done();
 });
