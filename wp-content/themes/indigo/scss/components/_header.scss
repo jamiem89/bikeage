@@ -1,0 +1,182 @@
+.skip-link {
+    display: block;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.site-header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--global-padding);
+    z-index: 10;
+    transition: all .3s ease-out;
+
+    @include breakpoint-up(large) {
+        padding-top: calc(var(--global-padding) * 2);
+        padding-bottom: calc(var(--global-padding) * 2);
+        max-width: var(--site-max-width);
+    }
+
+    &[data-scrolled="true"] {
+        padding-top: var(--global-padding);
+        padding-bottom: var(--global-padding);
+        background-color: var(--color-darkest);
+
+        @include breakpoint-up(large) {
+            .site-header__items a {
+                font-size: calc(var(--body-font-size) - 2px);
+            }
+        }
+    }
+}
+
+.site-header__logo {
+    display: block;
+    position: relative;
+    text-indent: -1000%;
+    height: 16px;
+    width: 146px;
+    background-image: url(../img/site-logo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 3;
+
+    h1 {
+        line-height: 0;
+    }
+
+    @include breakpoint-up(large) {
+        height: 21px;
+        width: 191px;
+    }
+}
+
+.site-header__trigger {
+    display: block;
+    position: relative;
+    height: 20px;
+    width: 30px;
+    text-indent: -99999px;
+    background-image: url(../img/icon-menu.svg);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat:no-repeat;
+    z-index: 3;
+
+    @include breakpoint-up(medium) {
+        display: none;
+    }
+
+    &:hover {
+        cursor:pointer;
+    }
+
+    &.active {
+        background-image: url(../img/icon-close.svg);
+    }
+}
+
+.site-header__menu {
+    @include breakpoint-up(medium) {
+        flex: 1;
+    }
+}
+
+.menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    bottom: 0;
+    z-index: 2;
+    background-color: var(--color-brand);
+    list-style-type: none;
+
+    transition: left .3s ease-in-out;
+
+    &.active {
+        left: 0;
+    }
+
+    @include breakpoint-up(medium) {
+        position: relative;
+        height: auto;
+        width: auto;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        background-color: transparent;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    li {
+        width: 100%;
+        text-align: center;
+        margin-bottom: var(--global-padding);
+
+        @include breakpoint-up(medium) {
+            display: inline-block;
+            margin-right: 20px;
+            width: auto;
+            text-align: left;
+            margin-bottom: 0;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        @include breakpoint-up(large) {
+            margin-right: 30px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &:hover {
+            a {
+                color: var(--color-lightest);
+                transition: all .2s ease-out;
+                text-shadow: none;
+            }
+        }
+    }
+
+    a {
+        font-size: 26px;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-family: var(--font-primary);
+        color: var(--color-brand);
+        text-shadow: -0.5px -0.5px 0 var(--color-lightest), 0.5px -0.5px 0 var(--color-lightest), -0.5px 0.5px 0 var(--color-lightest), 0.5px 0.5px 0 var(--color-lightest);
+
+        @include breakpoint-up(medium) {
+            font-family: var(--font-secondary);
+            font-weight: 300;
+            font-size: var(--body-font-size-small);
+            letter-spacing: .0625em;
+            color: var(--color-lightest);
+            text-shadow: none;
+
+            transition: font-size .3s ease-out;
+        }
+
+        @include breakpoint-up(large) {
+            font-size: calc(var(--body-font-size) - 2px);
+        }
+    }
+}

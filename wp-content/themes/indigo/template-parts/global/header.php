@@ -1,15 +1,15 @@
-<div class="site-header">
-    <div class="site-header__logo">
+<header class="site-header" data-scrolled='false'>
+    <a href="<?php echo get_home_url();?>" class="site-header__logo">
         <h1>Indigo Cycles</h1>
-    </div>
+    </a>
     <nav class="site-header__menu">
-        <button class="site-header__trigger"></button>
-        <ul>
-            <li><a href="#">Bikes</a></li>
-            <li><a href="#">Scooters</a></li>
-            <li><a href="#">Accessories</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Visit us</a></li>
-        </ul>
+        <button class="site-header__trigger">Open menu</button>
+        <?php
+           wp_nav_menu(array(
+             'theme_location' => 'headerMenuLocation',
+             'container' => false
+             )
+           );
+           ?>
     </nav>
-</div>
+</header>

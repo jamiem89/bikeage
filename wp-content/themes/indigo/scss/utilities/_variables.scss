@@ -1,2 +1,91 @@
-// FONTS
-$font-primary: 'Josefin Sans', sans-serif;
+// Fonts
+:root {
+    // Typefaces
+    --font-primary: 'Syncopate', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+
+    // Type sizes
+    --body-font-size: 16px;
+    --body-font-size-small: 12px;
+    --body-font-weight: 400;
+    --body-font-line-height: 1.444;
+    --body-font-letter-spacing: 0;
+    --body-font-colour: var(--colour-text-dark);
+
+    @include breakpoint-up(large) {
+        --body-font-size: 18px;
+        --body-font-size-small: 14px;
+    }
+
+    // h1 styles
+
+    --h1-font-size: 38px;
+
+    @include breakpoint-up(medium) {
+        --h1-font-size: 42px;
+    }
+
+    @include breakpoint-up(large) {
+        --h1-font-size: 64px;
+    }
+
+    // h3 styles
+
+    --h3-font-size: 28px;
+    --h3-letter-spacing: -0.05px;
+    --h3-margin-bottom: 16px;
+
+    @include breakpoint-up(medium) {
+        --h3-font-size: 34px;
+    }
+
+    @include breakpoint-up(large) {
+        --h3-font-size: 46px;
+        --h3-margin-bottom: 26px;
+    }
+
+    // h4 styles
+    --h4-font-size: 18px;
+    --h4-letter-spacing: -0.05px;
+
+    @include breakpoint-up(large) {
+        --h4-font-size: 20px;
+    }
+
+    // h4 styles
+    --h5-font-size: 14px;
+    --h5-letter-spacing: -0.05px;
+
+    @include breakpoint-up(large) {
+        --h5-font-size: 16px;
+    }
+
+    --tiny-text: 12px;
+    --tiny-text-letter-spacing: 1.5px;
+
+    // Colours
+    --color-brand: #131DF9;
+    --color-brand--tint: rgba(19, 29, 249, .3);
+    --color-brand-alt: #FD8636;
+    --color-brand-alt--tint: rgba(253, 134, 52, .1);
+    --color-lightest: #ffffff;
+    --color-darkest: #333333;
+
+    --color-brand--tint: #E7E8FE;
+
+    // Spacing & sizing
+    --global-padding: 1440px;
+    --grid-gap: 20px;
+    --global-padding: 20px;
+    --section-spacing: 40px;
+
+    @include breakpoint-up(medium) {
+        --section-spacing: 50px;
+    }
+
+    @include breakpoint-up(large) {
+        --section-spacing: 70px;
+    }
+
+
+}

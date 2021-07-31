@@ -1,0 +1,112 @@
+.img-text {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+        flex-basis: 100%;
+        @include breakpoint-up(medium) {
+            flex-basis: calc(50% - 20px);
+            margin: 0 10px;
+        }
+    }
+}
+
+.img-text--flipped {
+
+    .img-text__img {
+        padding-left: 0;
+
+        @include breakpoint-up(large) {
+            padding-right: 60px
+        }
+        picture:after {
+            transform: rotate(20deg);
+            right: auto;
+            left: -15%;
+        }
+    }
+
+    @include breakpoint-up(medium) {
+        .img-text__img {
+            order: 1;
+        }
+
+        .img-text__text {
+            order: 2;
+        }
+    }
+}
+
+.img-text__img {
+    position: relative;
+    margin-bottom: var(--global-padding);
+    overflow: hidden;
+
+    @include breakpoint-up(medium) {
+        margin-bottom: 0;
+        order: 2;
+    }
+    @include breakpoint-up(large) {
+        padding-left: 60px
+    }
+
+    picture {
+        display: block;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            right: -15%;
+            height: 25px;
+            width: 200%;
+            background-color: var(--color-brand);
+            transform-origin: center;
+            transform: rotate(-20deg);
+            mix-blend-mode: multiply;
+
+            @include breakpoint-up(large) {
+                height: 50px;
+                bottom: 30px;
+            }
+        }
+    }
+}
+
+.img-no-stripe:after {
+    display: none;
+}
+
+.img-text__text {
+    @include breakpoint-up(medium) {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 0 var(--global-padding);
+
+    }
+}
+
+.img-text__text-left {
+    text-align: left;
+}
+
+.img-text__text-contain {
+    @include breakpoint-up(medium) {
+        max-width: 460px;
+        margin: 0 auto;
+
+        p {
+            margin-bottom: calc(var(--global-padding) + 10px);
+        }
+    }
+}

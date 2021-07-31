@@ -1,11 +1,21 @@
 // Utilities
-@import "utilities/variables";
 @import "utilities/mixins";
-@import "utilities/custom-properties";
+@import "utilities/variables";
 
 // Base styles
 @import "base/defaults";
+@import "base/layout";
 @import "base/typography";
+@import "base/buttons";
+@import "base/icons";
 
 // Components
 @import "components/header";
+@import "components/footer";
+@import "components/hero";
+@import "components/product-card";
+@import "components/img-text";
+
+
+// Modifiers
+@import "utilities/modifiers";

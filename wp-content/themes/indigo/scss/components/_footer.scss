@@ -1,0 +1,33 @@
+.site-footer {
+    display: flex;
+    > div {
+        flex-basis: 100%;
+        margin-bottom: var(--grid-gap);
+
+        @include breakpoint-up(medium) {
+            flex-basis: calc(33.3333% - 20px);
+            margin: 0 10px;
+        }
+    }
+
+    h4 {
+        margin-bottom: 10px;
+    }
+
+    .link-list a {
+        font-size: calc(var(--body-font-size) - 4px);
+    }
+}
+
+
+.site-footer__legal {
+    font-size: calc(var(--body-font-size) - 4px);
+}
+
+.site-footer__logo {
+    height: 100%;
+    background-image: url(../img/site-logo--dark.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    max-width: 220px;
+}

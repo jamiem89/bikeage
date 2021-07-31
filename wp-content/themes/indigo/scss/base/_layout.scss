@@ -1,0 +1,34 @@
+// Styling for layout related bits
+
+.row {
+    position: relative;
+    width: 100%;
+    padding: 0 var(--global-padding);
+}
+
+.section-spacing {
+    padding-top: var(--section-spacing);
+    padding-bottom: var(--section-spacing);
+}
+
+.section-title {
+    margin-bottom: var(--section-spacing);
+}
+
+.section__footer {
+    display: flex;
+    justify-content: center;
+}
+
+.grid-quarters {
+    display: grid;
+    grid-gap: var(--grid-gap);
+
+    @include breakpoint-up(small) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-up(large) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

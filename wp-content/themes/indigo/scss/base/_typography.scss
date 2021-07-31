@@ -1,0 +1,104 @@
+// Base styles
+p, a {
+    font-size: var(--body-font-size);
+    font-family: var(--font-secondary);
+    font-weight: 300;
+}
+
+p:not(:last-child) {
+    margin-bottom: var(--global-padding);
+}
+
+h1, h2, h3, .h1, .h2, .h3 {
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+}
+
+ h4, h5, h6, .h4, .h5, .h6 {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+}
+
+
+h1, .h1 {
+    font-size: var(--h1-font-size);
+};
+
+h3, .h3 {
+    font-size: var(--h3-font-size);
+    letter-spacing: var(--h3-letter-spacing);
+    margin-bottom: var(--h3-margin-bottom);
+}
+
+h4, .h4 {
+    font-size: var(--h4-font-size);
+    letter-spacing: var(--h4-letter-spacing);
+}
+
+h5, .h5 {
+    font-size: var(--h5-font-size);
+    letter-spacing: var(--h5-letter-spacing);
+}
+
+
+// Fancy styles
+
+.text-outline {
+    color: var(--color-lightest);
+    text-shadow: -1px -1px 0 var(--color-brand), 1px -1px 0 var(--color-brand), -1px 1px 0 var(--color-brand), 1px 1px 0 var(--color-brand);
+}
+
+.text-outline--alt{
+    color: var(--color-lightest);
+    text-shadow: -1px -1px 0 var(--color-brand-alt), 1px -1px 0 var(--color-brand-alt), -1px 1px 0 var(--color-brand-alt), 1px 1px 0 var(--color-brand-alt);
+}
+
+.text-outline--light {
+    color: var(--color-brand-alt);
+    text-shadow: -1px -1px 0 var(--color-lightest), 1px -1px 0 var(--color-lightest), -1px 1px 0 var(--color-lightest), 1px 1px 0 var(--color-lightest);
+}
+
+.tag {
+    text-transform: uppercase;
+    letter-spacing: var(--tiny-text-letter-spacing);
+    font-weight: 700;
+}
+
+// List styles
+
+.link-list {
+    list-style-type: none;
+    li {
+        margin-bottom: 8px;
+
+        a {
+            color: var(--color-darkest);
+            text-decoration: none;
+        }
+    }
+}
+
+.icon-list {
+    list-style-type: none;
+    li {
+        position: relative;
+        margin-bottom: 15px;
+        padding-left: 35px;
+        &:after {
+            content:'';
+            position: absolute;
+            top: 0;
+            left:0;
+            height: 22px;
+            width: 22px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+        }
+    }
+
+    li, a {
+        color: var(--color-lightest);
+        font-weight: 300;
+    }
+}
